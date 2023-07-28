@@ -1,27 +1,41 @@
 .footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-  }
+  background-color: #FFFFFF;
+  color: rgb(9, 9, 9);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  border: 0px solid red;
+}
+
+.social-links {
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  color: rgb(177, 177, 177);
+  font-size: 24px;
+}
+
+.all-rights-reserved {
+  font-size: 14px;
   
+  align-content: center;
+  border: 0px solid red;
+}
+
+
+/* Make the footer responsive for small screens */
+@media screen and (max-width: 600px) {
   .social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
   }
-  
   .social-links a {
-    display: inline-block;
-    margin: 0 10px;
+    margin-right: 20px;
   }
-  
-  .social-links img {
-    height: 30px;
-    width: auto;
-  }
-  
-  .all-rights-reserved {
-    margin-top: 10px;
-  }
+}
+
   
