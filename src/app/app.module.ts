@@ -6,13 +6,15 @@ import { NavbarComponent } from './Components/Navbar/navbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './Components/Footer/footer.component';
 import { LeftComponent } from './Components/Left-component/left-box.component';
+import { RightComponent } from './Components/Right-component/right-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    LeftComponent
+    LeftComponent,
+    RightComponent
   ],
   imports: [
     BrowserModule,
