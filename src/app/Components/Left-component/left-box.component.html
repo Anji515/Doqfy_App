@@ -1,0 +1,22 @@
+<div class="left-box-1">
+    <p>Welcome back, <strong>Anji</strong></p>
+    <p>29 July 2023 , Saturday</p>
+  </div>
+<div class="left-box-2">
+  <div><strong>Wallet Balance</strong> <i class="fa-solid fa-wallet"></i></div>
+  <h3>₹ 2,50,000</h3>
+  <p>Current balance</p>
+  <h4>Running low ? <a href="#">Click here</a> to add more</h4>
+</div>
+<div class="left-box-3">
+  <h2>Pending Actions</h2>
+  <div class="left-sub-box" *ngFor="let item of data">
+    <div>
+      <h3>{{item.id}}</h3>
+      <button>{{item.daysAgo}} days ago</button>
+    </div>
+    <p>{{item.filesCount}} files are waiting to be Uploaded</p>
+  </div>
+</div>
+
+  

@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './Components/Navbar/navbar.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './Components/Footer/footer.component';
+import { LeftComponent } from './Components/Left-component/left-box.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    LeftComponent
   ],
   imports: [
     BrowserModule,

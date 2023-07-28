@@ -1,0 +1,66 @@
+/* Left container */
+
+.left-box-1 {
+    background-color: #fffefe;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+  }
+  
+  .left-box-2 {
+    background-color: #cbcaca;
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-size: 24px;
+  }
+
+  .left-box-2 div{
+    display: flex;
+    font-size: 18px;
+    justify-content: space-between;
+    
+  }
+
+  p{
+    font-size: 14px;
+    color: rgb(208, 208, 208);
+  }
+
+  h4{
+    font-size: 14px;
+  }
+
+  button{
+    border-radius: 5px;
+    padding:0px 10px;
+    font-size: 10px;
+    background-color: rgb(196, 196, 196);
+  }
+  
+  .left-box-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #2ecc71;
+    padding: 10px;
+    font-size: 20px;
+    overflow-y: auto; /* Add this line to enable scroll when content overflows */
+    max-height: 300px; /* Adjust the maximum height as needed */
+  }
+  
+  .left-sub-box {
+    background-color: #27ae60;
+    border: 1px solid gray;
+    border-radius: 16px;
+    color: rgb(6, 6, 6);
+    padding: 20px;
+    margin: 0 10px;
+  }
+
+  .left-sub-box div{
+    display: flex;
+    border: 1px solid red;
+    justify-content: space-between;
+  }
+  
