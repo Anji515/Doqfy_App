@@ -1,0 +1,164 @@
+/* Basic styles for the navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    color: white;
+    padding: 10px;
+    border-bottom: 1px solid grey;
+  }
+  
+  .logo img {
+    height: 40px;
+    width: auto;
+  }
+  
+  .navbar-items {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-items a {
+    color: rgb(16, 16, 16);
+    padding: 10px;
+    text-decoration: none;
+    font-family: 'Roboto';
+    font-size: 16px;
+    font-weight: 300;
+  }
+  
+  /* Styles for the services dropdown */
+  .nav-item {
+    position: relative;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #0c0c0c;
+  }
+  
+  .nav-item:hover .dropdown-content {
+    display: block;
+  }
+  
+  /* Styles for the notification */
+  .notification {
+    position: relative;
+    margin-left: 20px;
+  }
+  
+  .notification img {
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: rgb(18, 17, 17);
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 12px;
+  }
+  
+  .notification-popup {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .notification:hover .notification-popup {
+    display: block;
+  }
+  
+  /* Styles for the user info dropdown */
+  .user-info .user-logo img {
+    height: 30px;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  /* Styles for the hamburger menu icon */
+  .hamburger-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+  }
+  
+  .bar {
+    width: 100%;
+    height: 4px;
+    background-color: rgb(15, 15, 15);
+  }
+  
+  /* Styles for the mobile menu */
+  .mobile-menu {
+    display: none;
+    flex-direction: column;
+    color: #0c0c0c;
+  }
+  
+  .mobile-menu a {
+    color: rgb(8, 8, 8);
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  .mobile-menu.show {
+    display: flex;
+  }
+  
+  /* Media queries for responsive design */
+  @media screen and (max-width: 768px) {
+    /* Show the hamburger icon and hide the horizontal menu */
+    .navbar-items {
+      display: none;
+      color: #0c0c0c;
+    }
+  
+    .hamburger-icon {
+      display: flex;
+      
+    }
+  
+    /* Show the mobile menu when the hamburger icon is clicked */
+    .mobile-menu {
+      display: none;
+    }
+  
+    .mobile-menu.show {
+      display: flex;
+      background-color: #f6f5f5;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      left: 0;
+      padding: 10px;
+    }
+  }  

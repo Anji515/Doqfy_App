@@ -1,0 +1,27 @@
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .social-links a {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  .social-links img {
+    height: 30px;
+    width: auto;
+  }
+  
+  .all-rights-reserved {
+    margin-top: 10px;
+  }
+  
