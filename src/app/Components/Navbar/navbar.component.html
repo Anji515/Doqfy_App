@@ -1,55 +1,90 @@
 <nav class="navbar">
-    <div class="logo">
-      <!-- Image logo -->
-      <img src="https://doqfy.in/wp-content/uploads/2020/06/cropped-logo.png" alt="Logo">
-    </div>
-  
-    <!-- Hamburger icon for small screens -->
-    <div class="hamburger-icon" (click)="toggleMobileMenu()">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-  
-    <!-- Navbar items for medium and large screens -->
-    <div class="navbar-items">
-      <div class="nav-item">
-        <a href="#">Services</a>
-        <div class="dropdown-content">
-          <a href="#">Service 1</a>
-          <a href="#">Service 2</a>
-          <a href="#">Service 3</a>
-        </div>
-      </div>
-      <a href="#">User Management</a>
-      <a href="#">My Orders</a>
-      <a href="#">Reports</a>
-      <a href="#">Stamp Inventory</a>
-      <a href="#">Barcode</a>
-      <a href="#">Invoice</a>
-    </div>
-  
-    <!-- Login user info with dropdown and user logo -->
-    <div class="user-info">
-      <div class="user-logo">
-        <img src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png" alt="User">
-      </div>
-      <button class="dropbtn">Anji</button>
-      <div class="dropdown-content">
-        <a href="#">Profile</a>
-        <a href="#">Settings</a>
-        <a href="#">Logout</a>
-      </div>
-    </div>
-  
-    <!-- Mobile menu for small screens -->
-    <div class="mobile-menu" [ngClass]="{ 'show': isMobileMenuOpen }">
+  <div class="logo">
+    <!-- Image logo -->
+    <img
+      src="https://doqfy.in/wp-content/uploads/2020/06/cropped-logo.png"
+      alt="Logo"
+    />
+  </div>
+
+  <!-- Hamburger icon for small screens -->
+  <div class="hamburger-icon" (click)="toggleMobileMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+
+  <!-- Navbar items for medium and large screens -->
+  <div class="navbar-items">
+    <div class="nav-item">
       <a href="#">Services</a>
-      <a href="#">User Management</a>
-      <a href="#">My Orders</a>
-      <a href="#">Reports</a>
-      <a href="#">Stamp Inventory</a>
-      <a href="#">Barcode</a>
-      <a href="#">Invoice</a>
+      <div class="dropdown-content">
+        <a href="#">Individual</a>
+        <a href="#">Bussiness</a>
+        <a href="#">Professional</a>
+      </div>
     </div>
-  </nav>  
+    <a href="#">User Management</a>
+    <a href="#">My Orders</a>
+    <a href="#">Reports</a>
+    <a href="#">Stamp Inventory</a>
+    <a href="#">Barcode</a>
+    <a href="#">Invoice</a>
+    <button class="coming-soon">coming soon</button>
+    <div class="notification">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3119/3119338.png"
+        alt="Notifications"
+      />
+      <span class="notification-badge">3</span>
+      <div class="notification-popup">
+        <p>* You have a new message.</p>
+        <br>
+        <p>* Reminder: Today's meeting at 2 PM.</p>
+        <br>
+        <p>* Payment received. Thank you!</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login user info with dropdown and user logo -->
+  <div class="user-info">
+    <div class="user-logo">
+      <img
+        src="https://static-00.iconduck.com/assets.00/user-icon-2048x2048-ihoxz4vq.png"
+        alt="User"
+      />
+      <button class="dropbtn">Anji</button>
+    </div>
+    <div class="dropdown-content">
+      <a href="#">Profile</a>
+      <a href="#">Settings</a>
+      <a href="#">Logout</a>
+    </div>
+  </div>
+
+  <!-- Mobile menu for small screens -->
+  <div class="mobile-menu" [ngClass]="{ show: isMobileMenuOpen }">
+    <a href="#">Services</a>
+    <a href="#">User Management</a>
+    <a href="#">My Orders</a>
+    <a href="#">Reports</a>
+    <a href="#">Stamp Inventory</a>
+    <a href="#">Barcode</a>
+    <a href="#">Invoice</a>
+    <div class="notification">
+      <img
+        src="https://cdn-icons-png.flaticon.com/512/3119/3119338.png"
+        alt="Notifications"
+      />
+      <span class="notification-badge">3</span>
+      <div class="notification-popup">
+        <p>* You have a new message.</p>
+        <br>
+        <p>* Reminder: Today's meeting at 2 PM.</p>
+        <br>
+        <p>* Payment received. Thank you!</p>
+      </div>
+    </div>
+  </div>
+</nav>

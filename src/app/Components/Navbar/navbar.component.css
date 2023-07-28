@@ -5,7 +5,7 @@
     justify-content: space-between;
     background-color: #FFFFFF;
     color: white;
-    padding: 10px;
+    padding: 10px 20px;
     border-bottom: 1px solid grey;
   }
   
@@ -15,18 +15,22 @@
   }
   
   .navbar-items {
+    border: 0px solid red;
     display: flex;
     align-items: center;
+    gap: 20px;
+    justify-content: space-between;
+    font-family: 'Roboto';
   }
   
   .navbar-items a {
     color: rgb(16, 16, 16);
     padding: 10px;
     text-decoration: none;
-    font-family: 'Roboto';
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 15px;
+    font-weight: 500;
   }
+
   
   /* Styles for the services dropdown */
   .nav-item {
@@ -50,7 +54,7 @@
   }
   
   .dropdown-content a:hover {
-    background-color: #0c0c0c;
+    background-color: #c2bdbd;
   }
   
   .nav-item:hover .dropdown-content {
@@ -94,6 +98,27 @@
   }
   
   /* Styles for the user info dropdown */
+  .user-logo{
+    border: 0px solid red;
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  button{
+    padding: -0px 20px;
+    border-radius: 10px;
+  }
+
+  .coming-soon{
+    padding: 2px 5px;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: #fefefe;
+    font-family: 'Roboto';
+    color: gray;
+  }
   .user-info .user-logo img {
     height: 30px;
     width: auto;
@@ -162,3 +187,40 @@
       padding: 10px;
     }
   }  
+
+
+  .notification {
+    position: relative;
+    margin-left: 20px;
+    color: black;
+  }
+  
+  .notification img {
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -10px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 5px;
+    font-size: 12px;
+  }
+  
+  .notification-popup {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+  
+  .notification:hover .notification-popup {
+    display: block;
+  }
