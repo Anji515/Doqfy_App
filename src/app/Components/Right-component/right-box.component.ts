@@ -17,7 +17,7 @@ export class RightComponent {
     { count: 18, status: 'Total Orders',logoPer:'<i class="fa-solid fa-arrow-up-right-dots"></i>' , percentage: '+2.4%', logo:'<i class="fa-solid fa-box-open"></i>' },
     { count: 10, status: 'In Progress', logoPer:'<i class="fa-solid fa-arrow-up-right-dots"></i>' , percentage: '+2.4%', logo:'<i class="fa-solid fa-clock"></i>' },
     { count: 5, status: 'Completed Orders', logoPer:'<i class="fa-solid fa-arrow-up-right-dots"></i>' , percentage: '+2.4%', logo:'<i class="fa-solid fa-box"></i>' },
-    { count: 3, status: 'Cancelled Orders', logoPer:'<i class="fa-solid fa-chart-line"></i>' , percentage: '+2.4%', logo:'<i class="fa-solid fa-xmark"></i>' },
+    { count: 3, status: 'Cancelled Orders', logoPer:'<i class="fa-solid fa-chart-line"></i>' , percentage: '+2.4%', logo:'<i class="fa-solid fa-stroopwafel"></i>' },
   ]
 
   statesOfIndia: string[] = [

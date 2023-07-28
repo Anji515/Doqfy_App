@@ -1,5 +1,8 @@
-<div>
-    <h1>Frequently Used</h1>
+
+<div class="main-container">
+
+    <div>
+        <h1>Frequently Used</h1>
     <div class="grid-container">
         <div class="frequent" *ngFor="let item of frequent">
           <h2>{{ item.title }}</h2>
@@ -7,7 +10,6 @@
           <h2><a href="#">{{ item.link }} > ></a></h2>
     </div>
 </div>
-
 <div>
    <h1>Order Details</h1>
    <div class="grid-container">
@@ -15,12 +17,16 @@
         <div>
             <h2>{{ order.count }}</h2>
             <p>{{ order.status }}</p>
-            <div class="logoPer" [innerHTML]="order.logoPer"></div>
-            <p>{{ order.percentage }}</p>
+            <div class="logoPer">
+                <div [innerHTML]="order.logoPer"></div>
+                <p>{{ order.percentage }}</p>
+            </div>
         </div>
         <div class="logo" [innerHTML]="order.logo"></div>
     </div>
 </div>
+</div>
+
 </div>
 
 </div>
