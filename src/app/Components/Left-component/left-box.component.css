@@ -1,56 +1,97 @@
 /* Left container */
-
-.left-box-1 {
-    background-color: #fffefe;
+@import '~@fortawesome/fontawesome-free/css/all.css';
+ .left-box-1 {
+    background-color: #ffffff;
     padding: 20px;
     text-align: left;
     font-size: 18px;
+    border: 1px solid gray;
+    border-radius: 14px;
+    margin-bottom: 20px;
+  }
+
+  .left-box-1 i{
+    color: rgb(216, 202, 72);
+    border: 0px solid red;
+  }
+
+  .left-box-1 p{
+    color: black;
+    font-size: 20px;
+  }
+
+  #date{
+    color: gray;
+    font-size: 15px;
   }
   
   .left-box-2 {
-    background-color: #cbcaca;
+    background-color: #ffffff;
     color: white;
     padding: 20px;
     text-align: left;
     font-size: 24px;
+    border: 1px solid gray;
+    border-radius: 14px;
+    margin-bottom: 20px;
   }
 
   .left-box-2 div{
     display: flex;
     font-size: 18px;
+    color: rgb(90, 44, 158);
     justify-content: space-between;
     
   }
+  h3{
+    color: black;
+  }
+  h3+p{
+    color: gray;
+  }
+  p+h4{
+    border: 0px solid red;
+    padding: 12px 0px;
+  }
 
   p{
-    font-size: 14px;
+    font-size: 13px;
     color: rgb(208, 208, 208);
   }
 
   h4{
     font-size: 14px;
+    color: black;
   }
 
   button{
     border-radius: 5px;
     padding:0px 10px;
     font-size: 10px;
-    background-color: rgb(196, 196, 196);
+    background-color: rgb(225, 221, 221);
+  }
+
+  .left-box-outer{
+   padding: 10px;
+   border-radius: 14px;
+   border: 1px solid gray;
   }
   
   .left-box-3 {
     display: flex;
+    border: 0px solid gray;
+    border-radius: 14px;
     flex-direction: column;
     gap: 10px;
-    background-color: #2ecc71;
+    background-color: #ffffff;
     padding: 10px;
     font-size: 20px;
     overflow-y: auto; /* Add this line to enable scroll when content overflows */
-    max-height: 300px; /* Adjust the maximum height as needed */
+    max-height: 240px; /* Adjust the maximum height as needed */
   }
   
   .left-sub-box {
-    background-color: #27ae60;
+    background-color: #fdfdfd;
     border: 1px solid gray;
     border-radius: 16px;
     color: rgb(6, 6, 6);
@@ -60,7 +101,7 @@
 
   .left-sub-box div{
     display: flex;
-    border: 1px solid red;
+    border: 0px solid red;
     justify-content: space-between;
   }
   

@@ -1,6 +1,6 @@
 <div class="left-box-1">
-    <p>Welcome back, <strong>Anji</strong></p>
-    <p>29 July 2023 , Saturday</p>
+    <p><i class="fa-solid fa-hand-holding-droplet"></i> Welcome back, <strong>Anji</strong></p>
+    <p id="date">29 July 2023 , Saturday</p>
   </div>
 <div class="left-box-2">
   <div><strong>Wallet Balance</strong> <i class="fa-solid fa-wallet"></i></div>
@@ -8,14 +8,16 @@
   <p>Current balance</p>
   <h4>Running low ? <a href="#">Click here</a> to add more</h4>
 </div>
-<div class="left-box-3">
+<div class="left-box-outer">
   <h2>Pending Actions</h2>
-  <div class="left-sub-box" *ngFor="let item of data">
-    <div>
-      <h3>{{item.id}}</h3>
-      <button>{{item.daysAgo}} days ago</button>
+  <div class="left-box-3">
+    <div class="left-sub-box" *ngFor="let item of data">
+      <div>
+        <h4>{{item.id}}</h4>
+        <button>{{item.daysAgo}} days ago</button>
+      </div>
+      <p>{{item.filesCount}} files are waiting to be Uploaded</p>
     </div>
-    <p>{{item.filesCount}} files are waiting to be Uploaded</p>
   </div>
 </div>
 

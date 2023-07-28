@@ -1,18 +1,18 @@
 .main-container{
     display: flex;
     width: 100%;
-    height: 120vh;
+    height: 90vh;
 }
 
 .left-container{
-    flex: 3;
-    column-gap: 50px;
-    border: 1px solid gray;
-    background: #8b8e60;
+    flex: 2;
+    padding: 10px;
+    border: 0px solid gray;
+    background: #f9fbfd;
 }
 
 .right-container{
     flex: 7;
     border: 1px solid gray;
-    background: #c9e2e2;
+    background: #f9fbfd;
 }
