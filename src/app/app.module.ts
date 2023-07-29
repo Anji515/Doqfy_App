@@ -13,8 +13,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-// import { ChartComponent } from './Components/Charts/chart.component';
-// import { ChartsModule } from 'ng2-charts';
+
+
+
 
 @NgModule({
   declarations: [
@@ -22,8 +23,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavbarComponent,
     FooterComponent,
     LeftComponent,
-    RightComponent,
-    // ChartComponent
+    RightComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +34,7 @@ import { MatNativeDateModule } from '@angular/material/core';
     MatInputModule,
     MatFormFieldModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

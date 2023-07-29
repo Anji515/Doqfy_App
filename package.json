@@ -24,6 +24,7 @@
     "@fortawesome/fontawesome-free": "^6.4.0",
     "@types/chart.js": "^2.9.37",
     "chart.js": "^4.3.2",
+    "ng2-charts-schematics": "^0.1.7",
     "ngx-chartjs": "^0.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
