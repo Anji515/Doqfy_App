@@ -12,6 +12,7 @@ export class LeftComponent {
     { id: '#fdc35545', daysAgo: '10', filesCount: '2' },
     { id: '#jws46456', daysAgo: '10', filesCount: '2' },
     { id: '#klm35062', daysAgo: '10', filesCount: '2' },
+    { id: '#ghj36042', daysAgo: '10', filesCount: '2' },
   ];
 
 }

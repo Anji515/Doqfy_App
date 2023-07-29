@@ -2,10 +2,10 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
  .left-box-1 {
     background-color: #ffffff;
-    padding: 20px;
+    padding:30px 20px;
     text-align: left;
     font-size: 18px;
-    border: 1px solid gray;
+    border: 0px solid rgb(178, 176, 176);
     border-radius: 14px;
     margin-bottom: 20px;
   }
@@ -28,10 +28,10 @@
   .left-box-2 {
     background-color: #ffffff;
     color: white;
-    padding: 20px;
+    padding: 40px 20px;
     text-align: left;
     font-size: 24px;
-    border: 1px solid gray;
+    border: 0px solid gray;
     border-radius: 14px;
     margin-bottom: 20px;
   }
@@ -45,6 +45,8 @@
   }
   h3{
     color: black;
+    font-size: 25px;
+    margin-bottom: -2px;
   }
   h3+p{
     color: gray;
@@ -72,9 +74,10 @@
   }
 
   .left-box-outer{
-   padding: 10px;
+   padding:40px 20px;
    border-radius: 14px;
-   border: 1px solid gray;
+   border: 0px solid gray;
+   background-color: #ffffff;
   }
   
   .left-box-3 {
@@ -84,10 +87,10 @@
     flex-direction: column;
     gap: 10px;
     background-color: #ffffff;
-    padding: 10px;
+    padding: 40px 10px;
     font-size: 20px;
-    overflow-y: auto; /* Add this line to enable scroll when content overflows */
-    max-height: 240px; /* Adjust the maximum height as needed */
+    overflow-y: auto; 
+    max-height: 382px;
   }
   
   .left-sub-box {
@@ -95,7 +98,7 @@
     border: 1px solid gray;
     border-radius: 16px;
     color: rgb(6, 6, 6);
-    padding: 20px;
+    padding: 10px;
     margin: 0 10px;
   }
 

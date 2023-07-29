@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
-  selector: 'app-chart', // Replace 'app-chart' with your desired selector
-  templateUrl: './chart.component.html',
-  styleUrls: ['./chart.component.css']
+  selector: 'app-chart2', // Replace 'app-chart2' with your desired selector
+  templateUrl: './chart2.component.html',
+  styleUrls: ['./chart2.component.css']
 })
-export class ChartComponent implements OnInit {
-  chartData: number[] = [40, 25, 20, 15];
+export class Chart2Component implements OnInit {
+  chartData: number[] = [10, 30, 35, 25];
   chartLabels: string[] = ['Initiated', 'Pending', 'Signed', 'Expired'];
   chartColors: string[] = ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'];
   chart: Chart | any = null;
@@ -19,7 +19,7 @@ export class ChartComponent implements OnInit {
   }
 
   createChart() {
-    const ctx = document.getElementById('doughnutChart') as HTMLCanvasElement;
+    const ctx = document.getElementById('doughnutChart2') as HTMLCanvasElement;
     if (ctx) {
       this.chart = new Chart(ctx, {
         type: 'doughnut',

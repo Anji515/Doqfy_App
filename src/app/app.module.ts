@@ -13,9 +13,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-
-
-
+import { ChartComponent } from './Components/Charts/chart.component';
+import { Chart2Component } from './Components/Chart-2/chart2.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,9 @@ import { MatNativeDateModule } from '@angular/material/core';
     NavbarComponent,
     FooterComponent,
     LeftComponent,
-    RightComponent
+    RightComponent,
+    ChartComponent,
+    Chart2Component
   ],
   imports: [
     BrowserModule,
