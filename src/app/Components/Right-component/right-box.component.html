@@ -1,32 +1,55 @@
-
 <div class="main-container">
+  <div>
+    <h1>Frequently Used</h1>
+    <div class="grid-container">
+      <div class="frequent" *ngFor="let item of frequent">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.body }}</p>
+        <h2>
+          <a href="#">{{ item.link }} > ></a>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Cities and Dates -->
+    <div>
+        <div>
+          <select name="branches" id="branches">
+            <option value="">All Branches</option>
+            <option *ngFor="let state of statesOfIndia" [value]="state">{{ state }}</option>
+          </select>
+
+          <section>
+            <mat-form-field appearance="fill">
+              <mat-label>Custom Range</mat-label>
+              <input matInput [matDatepicker]="customRangePicker" [(ngModel)]="selectedDate" [max]="maxDate"
+              (dateInput)="onDateChange($event)" (focus)="customRangePicker.open()"
+              [value]="selectedDate | date: 'MMMM yyyy'">
+                     <div>{{ formattedDate }}</div>
+              <mat-datepicker-toggle matSuffix [for]="customRangePicker"></mat-datepicker-toggle>
+              <mat-datepicker #customRangePicker [startView]="startView"></mat-datepicker>
+            </mat-form-field>
+          </section>
+
+        </div>
+      </div>
+      
 
     <div>
-        <h1>Frequently Used</h1>
-    <div class="grid-container">
-        <div class="frequent" *ngFor="let item of frequent">
-          <h2>{{ item.title }}</h2>
-          <p>{{ item.body }}</p>
-          <h2><a href="#">{{ item.link }} > ></a></h2>
-    </div>
-</div>
-<div>
-   <h1>Order Details</h1>
-   <div class="grid-container">
-       <div class="orders" *ngFor="let order of orders">
-        <div>
+      <h1>Order Details</h1>
+      <div class="grid-container">
+        <div class="orders" *ngFor="let order of orders">
+          <div>
             <h2>{{ order.count }}</h2>
             <p>{{ order.status }}</p>
             <div class="logoPer">
-                <div [innerHTML]="order.logoPer"></div>
-                <p>{{ order.percentage }}</p>
+              <div [innerHTML]="order.logoPer"></div>
+              <p>{{ order.percentage }}</p>
             </div>
+          </div>
+          <div class="logo" [innerHTML]="order.logo"></div>
         </div>
-        <div class="logo" [innerHTML]="order.logo"></div>
+      </div>
     </div>
-</div>
-</div>
-
-</div>
-
+  </div>
 </div>

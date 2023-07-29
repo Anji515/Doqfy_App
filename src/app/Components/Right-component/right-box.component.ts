@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-right-box',
   templateUrl: './right-box.component.html',
-  styleUrls: ['./right-box.component.css']
+  styleUrls: ['./right-box.component.css'],
+  providers: [DatePipe]
 })
 export class RightComponent {
 
@@ -56,5 +58,33 @@ export class RightComponent {
     'Delhi',
     'Puducherry',
   ];
+
+
+  selectedDate: Date = new Date();
+  maxDate: Date= new Date();
+  startView: 'month' | 'year' = 'year';
+  formattedDate: any='';
+
+  constructor(private datePipe: DatePipe) { }
+
+  ngOnInit() {
+    this.selectedDate = new Date();
+    this.maxDate = new Date();
+    this.maxDate.setFullYear(this.maxDate.getFullYear());
+    
+    // currentb date formatted
+    this.formattedDate = this.datePipe.transform(this.selectedDate, 'MMMM yyyy');
+  }
+
+  onDateChange(event: any) {
+    const selectedDate = event.value as Date;
+    console.log('Selected Date:', selectedDate);
+
+    if (selectedDate) {
+      this.formattedDate = this.datePipe.transform(selectedDate, 'MMMM yyyy');
+      localStorage.setItem('selectedDate', this.formattedDate.toISOString());
+      console.log('Formatted Date:', this.formattedDate);
+    }
+  }
 
 }

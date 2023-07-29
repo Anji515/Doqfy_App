@@ -7,6 +7,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './Components/Footer/footer.component';
 import { LeftComponent } from './Components/Left-component/left-box.component';
 import { RightComponent } from './Components/Right-component/right-box.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,13 @@ import { RightComponent } from './Components/Right-component/right-box.component
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [],
   bootstrap: [AppComponent]
