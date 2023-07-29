@@ -58,7 +58,8 @@ export class RightComponent {
     'Delhi',
     'Puducherry',
   ];
-
+  
+  
 
   selectedDate: Date = new Date();
   maxDate: Date= new Date();

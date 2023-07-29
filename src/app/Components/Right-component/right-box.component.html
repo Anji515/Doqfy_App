@@ -13,24 +13,22 @@
 
     <!-- Cities and Dates -->
     <div>
-        <div>
+        <div class="city-container">
           <select name="branches" id="branches">
             <option value="">All Branches</option>
             <option *ngFor="let state of statesOfIndia" [value]="state">{{ state }}</option>
           </select>
-
           <section>
-            <mat-form-field appearance="fill">
-              <mat-label>Custom Range</mat-label>
+            <mat-form-field >
               <input matInput [matDatepicker]="customRangePicker" [(ngModel)]="selectedDate" [max]="maxDate"
               (dateInput)="onDateChange($event)" (focus)="customRangePicker.open()"
               [value]="selectedDate | date: 'MMMM yyyy'">
+              <label>Custom Range</label>
                      <div>{{ formattedDate }}</div>
               <mat-datepicker-toggle matSuffix [for]="customRangePicker"></mat-datepicker-toggle>
               <mat-datepicker #customRangePicker [startView]="startView"></mat-datepicker>
             </mat-form-field>
           </section>
-
         </div>
       </div>
       
@@ -52,4 +50,11 @@
       </div>
     </div>
   </div>
+
+  <!-- <app-chart
+  [initiated]="50"
+  [pending]="20"
+  [signed]="15"
+  [expired]="15"
+  ></app-chart> -->
 </div>
