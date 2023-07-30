@@ -1,61 +1,45 @@
-div {
-  border: 0px solid gray;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 16px;
-  text-align: center;
-}
-
-canvas {
-  width: 100%;
-  max-width: 220px; /* Limit the maximum width of the chart */
-  margin: 0 auto;
-}
-
-.chartjs-tooltip {
-  opacity: 1;
-  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  padding: 20px 12px; /* Adjust padding for tooltip */
-  color: #fff;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-}
-
-strong {
-  visibility: hidden;
-}
-
-h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-h1::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 37%;
-  height: 2px;
-  background-color: #000;
-}
-
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-  div {
-    padding: 10px; /* Reduce padding for smaller screens */
+#doughnutChart2 {
+    width: 220px;
+    margin: 0 auto;
+    position: relative;
   }
-
+  div{
+    border: 0px solid gray;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 16px;
+  }
   .chartjs-tooltip {
-    padding: 10px 8px; /* Adjust padding for tooltip on smaller screens */
+    opacity: 1;
+    font-family: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 30px 12px;
+    color: #916fad;
+    color: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
   }
+
+  strong{
+  visibility: hidden;
+  }
+
 
   h1 {
-    font-size: 20px; /* Decrease font size for smaller screens */
+    position: relative;
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
   }
-}
+  
+  h1::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px; 
+    width: 37%;
+    height: 2px; 
+    background-color: #000;
+  }

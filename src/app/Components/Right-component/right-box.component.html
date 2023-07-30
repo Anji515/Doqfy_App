@@ -11,51 +11,59 @@
       </div>
     </div>
   </div>
-    <!-- Cities and Dates -->
-    <div>
-        <div class="city-container">
-          <select name="branches" id="branches">
-            <option value="">All Branches</option>
-            <option *ngFor="let state of statesOfIndia" [value]="state">{{ state }}</option>
-          </select>
-          <section class="flex-container">
-            <mat-form-field class="flex-item">
-              <input matInput [matDatepicker]="customRangePicker" [(ngModel)]="selectedDate" [max]="maxDate"
-                (dateInput)="onDateChange($event)" (focus)="customRangePicker.open()"
-                [value]="selectedDate | date: 'MMMM yyyy'">
-              <label>Custom Range</label>
-              <div>{{ formattedDate }}</div>
-              <mat-datepicker-toggle matSuffix [for]="customRangePicker"></mat-datepicker-toggle>
-              <mat-datepicker #customRangePicker [startView]="startView"></mat-datepicker>
-            </mat-form-field>
-          </section>
-        </div>
-      </div>
-      
+  <!-- Cities and Dates -->
+  
+  <div>
+    <div class="city-container">
+      <select name="branches" id="branches">
+        <option value="">All Branches</option>
+        <option *ngFor="let state of statesOfIndia" [value]="state">
+          {{ state }}
+        </option>
+      </select>
 
-    <div class="outer-container">
-      <div class="order-heading">
-        <h1>Order Details</h1>
-        <span><a href="#"><strong>View All</strong></a></span>
+      <div>
+        <label for="dateInput"><strong>Select a date : </strong></label>
+        <input
+          type="date"
+          id="dateInput"
+          name="dateInput"
+          #dateInputRef
+          (change)="onDateChange(dateInputRef.value)"
+        />
+        <h3>{{ selectedDate | date: 'MMMM yyyy'}}</h3>
       </div>
-      <div class="grid-container">
-        <div class="orders" *ngFor="let order of orders; let last = last" [ngClass]="{'last-item-color': last}">
-          <div>
-            <h2>{{ order.count }}</h2>
-            <h3>{{ order.status }}</h3>
-            <div class="logoPer">
-              <div [innerHTML]="order.logoPer"></div>
-              <p>{{ order.percentage }}</p>
-            </div>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="order-heading">
+      <h1>Order Details</h1>
+      <span
+        ><a href="#"><strong>View All</strong></a></span
+      >
+    </div>
+    <div class="grid-container">
+      <div
+        class="orders"
+        *ngFor="let order of orders; let last = last"
+        [ngClass]="{ 'last-item-color': last }"
+      >
+        <div>
+          <h2>{{ order.count }}</h2>
+          <h3>{{ order.status }}</h3>
+          <div class="logoPer">
+            <div [innerHTML]="order.logoPer"></div>
+            <p>{{ order.percentage }}</p>
           </div>
-          <div class="logo" [innerHTML]="order.logo"></div>
         </div>
+        <div class="logo" [innerHTML]="order.logo"></div>
       </div>
+    </div>
   </div>
 
   <div class="chart-container">
-      <app-chart></app-chart>
-      <app-chart2></app-chart2>
+    <app-chart></app-chart>
+    <app-chart2></app-chart2>
   </div>
 </div>
-

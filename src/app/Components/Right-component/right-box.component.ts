@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild , ElementRef, OnInit} from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 @Component({
@@ -7,7 +7,7 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./right-box.component.css'],
   providers: [DatePipe]
 })
-export class RightComponent {
+export class RightComponent implements OnInit {
 
   frequent = [
     { title: 'View Funds', body: 'You have used this service 20 times in the last one week', link: 'Action CTA' },
@@ -53,7 +53,7 @@ export class RightComponent {
     'West Bengal',
     'Andaman and Nicobar Islands',
     'Chandigarh',
-    'Dadra and Nagar Haveli and Daman and Diu',
+    'Dadra and Nagar Haveli',
     'Lakshadweep',
     'Delhi',
     'Puducherry',
@@ -61,31 +61,32 @@ export class RightComponent {
   
   
 
-  selectedDate: Date = new Date();
-  maxDate: Date= new Date();
-  startView: 'month' | 'year' = 'year';
-  formattedDate: any='';
-
-  constructor(private datePipe: DatePipe) { }
+  @ViewChild('dateInputRef', { static: true }) dateInputRef!: ElementRef;
+  selectedDate: string = '';
+  currentDate: string = '';
 
   ngOnInit() {
-    this.selectedDate = new Date();
-    this.maxDate = new Date();
-    this.maxDate.setFullYear(this.maxDate.getFullYear());
-    
-    // currentb date formatted
-    this.formattedDate = this.datePipe.transform(this.selectedDate, 'MMMM yyyy');
+    this.setMinMaxDateRange();
+    this.setCurrentDate();
   }
 
-  onDateChange(event: any) {
-    const selectedDate = event.value as Date;
-    console.log('Selected Date:', selectedDate);
+  setMinMaxDateRange() {
+    const currentDate = new Date();
+    const maxDate = currentDate.toISOString().split('T')[0]; // Current date as the maximum date
+    const minDate = new Date(currentDate.getFullYear() - 5, 0, 1).toISOString().split('T')[0]; // 5 years ago as the minimum date
+    const dateInput = this.dateInputRef.nativeElement as HTMLInputElement;
+    dateInput.max = maxDate;
+    dateInput.min = minDate;
+  }
 
-    if (selectedDate) {
-      this.formattedDate = this.datePipe.transform(selectedDate, 'MMMM yyyy');
-      localStorage.setItem('selectedDate', this.formattedDate.toISOString());
-      console.log('Formatted Date:', this.formattedDate);
-    }
+  setCurrentDate() {
+    const currentDate = new Date();
+    this.currentDate = currentDate.toISOString().split('T')[0];
+    this.selectedDate = this.currentDate; // Set the selected date to the current date initially
+  }
+
+  onDateChange(selectedDate: string) {
+    this.selectedDate = selectedDate;
   }
 
 }
