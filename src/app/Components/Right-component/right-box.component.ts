@@ -72,8 +72,8 @@ export class RightComponent implements OnInit {
 
   setMinMaxDateRange() {
     const currentDate = new Date();
-    const maxDate = currentDate.toISOString().split('T')[0]; // Current date as the maximum date
-    const minDate = new Date(currentDate.getFullYear() - 5, 0, 1).toISOString().split('T')[0]; // 5 years ago as the minimum date
+    const maxDate = currentDate.toISOString().split('T')[0];
+    const minDate = new Date(currentDate.getFullYear() - 5, 0, 1).toISOString().split('T')[0];
     const dateInput = this.dateInputRef.nativeElement as HTMLInputElement;
     dateInput.max = maxDate;
     dateInput.min = minDate;
@@ -82,7 +82,7 @@ export class RightComponent implements OnInit {
   setCurrentDate() {
     const currentDate = new Date();
     this.currentDate = currentDate.toISOString().split('T')[0];
-    this.selectedDate = this.currentDate; // Set the selected date to the current date initially
+    this.selectedDate = this.currentDate; 
   }
 
   onDateChange(selectedDate: string) {

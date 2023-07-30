@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
-  selector: 'app-chart', // Replace 'app-chart' with your desired selector
+  selector: 'app-chart', 
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })

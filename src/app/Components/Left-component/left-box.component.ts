@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./left-box.component.css']
 })
 export class LeftComponent implements OnInit{
-  // Add any logic or functionality related to the footer here if needed
+  
   data = [
     { id: '#trd35464', daysAgo: '10', filesCount: '2' },
     { id: '#fdc35545', daysAgo: '10', filesCount: '2' },
@@ -18,8 +18,8 @@ export class LeftComponent implements OnInit{
   welcomeMessage: string='';
 
   ngOnInit() {
-    this.updateDate(); // Initial update of the date
-    setInterval(() => this.updateDate(), 1000 * 60); // Update the date every minute
+    this.updateDate(); 
+    setInterval(() => this.updateDate(), 1000 * 60); 
   }
 
   updateDate() {

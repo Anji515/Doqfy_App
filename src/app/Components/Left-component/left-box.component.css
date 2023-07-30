@@ -112,7 +112,7 @@
     .left-box-1,
     .left-box-2,
     .left-box-outer {
-      padding: 20px; /* Reduce padding for smaller screens */
+      padding: 20px; 
     }
   
     .left-box-1 {
@@ -129,11 +129,11 @@
     }
   
     .left-sub-box div {
-      flex-direction: column; /* Stack the elements vertically */
+      flex-direction: column;
     }
   
     .left-sub-box h4,
     .left-sub-box button {
-      margin-top: 10px; /* Add some space between the elements */
+      margin-top: 10px; 
     }
   }
