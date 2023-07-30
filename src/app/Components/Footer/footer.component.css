@@ -6,6 +6,10 @@
   align-items: center;
   padding: 10px 20px;
   border: 0px solid red;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999; /* Adjust z-index to ensure it stays on top of other content */
 }
 
 .social-links {
@@ -22,20 +26,24 @@
 
 .all-rights-reserved {
   font-size: 14px;
-  
   align-content: center;
   border: 0px solid red;
 }
 
-
 /* Make the footer responsive for small screens */
-@media screen and (max-width: 600px) {
-  .social-links {
+@media screen and (max-width: 450px) {
+  .footer {
     flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
   }
+
+  .social-links {
+    margin-bottom: 5px;
+  }
+
   .social-links a {
-    margin-right: 20px;
+    margin: 5px;
   }
 }
-
-  

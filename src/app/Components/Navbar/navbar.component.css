@@ -1,13 +1,21 @@
-/* Basic styles for the navbar */
+body {
+  margin: 0;
+}
+
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #FFFFFF;
-    color: white;
-    padding: 10px 20px;
-    border-bottom: 1px solid grey;
-  }
+  position: fixed; 
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #FFFFFF;
+  color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid grey;
+  z-index: 100; 
+}
   
   .logo img {
     height: 40px;
@@ -32,7 +40,7 @@
   }
 
   
-  /* Styles for the services dropdown */
+  /*dropdown */
   .nav-item {
     position: relative;
   }
@@ -61,7 +69,7 @@
     display: block;
   }
   
-  /* Styles for the notification */
+  /* notification */
   .notification {
     position: relative;
     margin-left: 20px;
@@ -96,7 +104,7 @@
     display: block;
   }
   
-  /* Styles for the user info dropdown */
+  /* user info dropdown */
   .user-logo{
     border: 0px solid red;
     display: flex;
@@ -124,7 +132,7 @@
     cursor: pointer;
   }
   
-  /* Styles for the hamburger menu icon */
+  /* the hamburger menu icon */
   .hamburger-icon {
     display: none;
     flex-direction: column;
@@ -133,7 +141,7 @@
     cursor: pointer;
     height: 30px;
     width: 30px;
-  }
+  } 
   
   .bar {
     width: 100%;
@@ -141,7 +149,7 @@
     background-color: rgb(15, 15, 15);
   }
   
-  /* Styles for the mobile menu */
+  /* mobile menu */
   .mobile-menu {
     display: none;
     flex-direction: column;
@@ -160,7 +168,10 @@
   
   /* Media queries for responsive design */
   @media screen and (max-width: 768px) {
-    /* Show the hamburger icon and hide the horizontal menu */
+    .navbar{
+     border: 1px solid gray;
+     flex-wrap: wrap; 
+    }
     .navbar-items {
       display: none;
       color: #0c0c0c;
@@ -170,8 +181,6 @@
       display: flex;
       
     }
-  
-    /* Show the mobile menu when the hamburger icon is clicked */
     .mobile-menu {
       display: none;
     }

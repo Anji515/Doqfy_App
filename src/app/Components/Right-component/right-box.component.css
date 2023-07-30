@@ -95,7 +95,6 @@
     margin: 5px 0;
   }
   
-  /* Add hover effect to grid items */
   .frequent:hover,
   .orders:hover {
     transform: translateY(-5px);
@@ -103,7 +102,6 @@
     cursor: pointer;
   }
   
-  /* Add responsive styling */
   @media screen and (max-width: 768px) {
     .grid-container {
       grid-template-columns: 1fr;
@@ -149,4 +147,69 @@
     flex-direction: column;
     align-items: center;
     margin: 20px;
+  }
+
+  @media screen and (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    }
+  
+    .outer-container {
+      padding: 10px; /* Reduce padding for smaller screens */
+    }
+  
+    h1 {
+      font-size: 14px; 
+    }
+
+    .frequent h2{
+      font-size: 8px; 
+      border: 0px solid red;
+    }  
+
+    .orders h2 {
+      font-size: 12px; 
+      border: 0px solid rgb(39, 37, 37);
+    }  
+
+    .orders h3{
+      font-size: 7px; 
+      border: 0px solid red;
+    }
+  
+    .frequent p,
+    .orders p {
+      color: #666666;
+      font-size: 8px;
+    }
+
+    .orders .logo {
+      font-size: 12px;
+      margin-left: -12px;
+      color: #913ed5;
+    }
+
+    .orders{
+     justify-content: left;
+     gap: 0px;
+    }
+    .city-container {
+      flex-direction: column; /* Stack the elements vertically on smaller screens */
+      align-items: flex-start;
+    }
+  
+    .city-container select {
+      width: 100%;
+      margin-top: 10px; /* Add some space between the select and the date picker */
+    }
+  
+    .chart-container {
+      flex-direction: column; /* Stack the charts vertically on smaller screens */
+      align-items: center;
+    }
+  
+    .chart-container app-chart,
+    .chart-container app-chart2 {
+      width: 100%; /* Make the charts occupy the full width */
+    }
   }
