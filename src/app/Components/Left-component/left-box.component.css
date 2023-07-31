@@ -55,8 +55,9 @@ p {
 
 button {
   border-radius: 5px;
+  width: 100px;
   padding: 0 10px;
-  font-size: 10px;
+  font-size: 12px;
   background-color: #e1dddd;
 }
 
@@ -74,7 +75,7 @@ button {
   padding: 40px 10px;
   font-size: 20px;
   overflow-y: auto;
-  max-height: 320px;
+  max-height: 380px;
 }
 
 .left-sub-box {
@@ -90,11 +91,13 @@ button {
   justify-content: space-between;
 }
 
+
 @media screen and (max-width: 768px) {
   .left-box-1,
   .left-box-2,
   .left-box-outer {
     padding: 20px;
+    width: 90%;
   }
 
   .left-box-1 {
@@ -117,5 +120,6 @@ button {
   .left-sub-box h4,
   .left-sub-box button {
     margin-top: 10px;
+    font-size: 10px;
   }
 }

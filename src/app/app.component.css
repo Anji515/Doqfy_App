@@ -14,7 +14,16 @@
 }
 
 .right-container{
-    flex: 6;
+    flex: 7;
     border: 0px solid gray;
     background: #f9fbfd;
 }
+
+@media screen and (max-width: 700px) {
+    .left-container{
+        flex: 4;
+    }
+    .right-container{
+        flex: 6;
+    }
+  }

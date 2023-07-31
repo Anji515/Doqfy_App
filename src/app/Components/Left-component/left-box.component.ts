@@ -47,10 +47,10 @@ export class LeftComponent implements OnInit{
 
 
   showSnackbar(message: string) {
-    this.snackBar.open(message, 'Close', {
+    this.snackBar.open(message, '', {
       duration: 1000, 
-      verticalPosition: 'top',
-      horizontalPosition: 'center',
+      verticalPosition: 'bottom',
+      horizontalPosition: 'center'
     });
   }
 
@@ -68,7 +68,6 @@ export class LeftComponent implements OnInit{
     this.currentDate = new Date();
     this.welcomeMessage = `Welcome back, Anji`;
   }
-
 
 }
 

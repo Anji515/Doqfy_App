@@ -42,12 +42,13 @@ export class RightComponent implements OnInit {
   statesOfIndia: string[] = [];
   selectedState: string = '';
   
+  selectedDate: string = '';
+  currentDate: string = '';
+  selectedMonth: number=0;
+  selectedYear : number=0;
 
   @ViewChild('dateInputRef', { static: true }) dateInputRef!: ElementRef;
   @ViewChild(ChartComponent, { static: false }) chartComponent!: ChartComponent;
-
-  selectedDate: string = '';
-  currentDate: string = '';
 
   ngOnInit() {
     this.fetchOrdersData();
@@ -78,7 +79,7 @@ export class RightComponent implements OnInit {
     this.http.get<Order[]>('https://freelancer-6ebn.onrender.com/orders').subscribe(
       (data) => {
         this.orders = data;
-        // console.log('orders',this.orders)
+
         this.statesOfIndia = [...new Set(this.orders.map(order => order.state))];
         this.totalDataCount = this.orders.length;
         this.progressCount = this.orders.filter(order => order.status === 'Progress').length;
@@ -111,7 +112,6 @@ export class RightComponent implements OnInit {
     this.progressData = this.filteredOrders.filter(order => order.status === 'Progress');
     this.cancelledData = this.filteredOrders.filter(order => order.status === 'Cancelled');
     this.completedData = this.filteredOrders.filter(order => order.status === 'Completed');
-    
 
     if (this.chartComponent) {
       this.chartComponent.processEsignData();
@@ -135,6 +135,20 @@ export class RightComponent implements OnInit {
 
   onDateChange(selectedDate: string) {
     this.selectedDate = selectedDate;
+    const dateObject = new Date(selectedDate);
+
+  // Extract the month number (0-based index, so we add 1 to get the real month number)
+  const selectedMonth = dateObject.getMonth() + 1;
+
+  // Extract the full year
+  const selectedYear = dateObject.getFullYear();
+
+  // Save the selected month and year
+  this.selectedMonth = selectedMonth;
+  this.selectedYear = selectedYear;
+
+  console.log('Selected month (integer):', this.selectedMonth);
+  console.log('Selected year (integer):', this.selectedYear);
   }
 
 }
