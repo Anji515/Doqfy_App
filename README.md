@@ -6,15 +6,19 @@ A brief introduction of your project goes here. You may want to cover the purpos
 ## Deplolyed App
 https://doqfy.vercel.app/
 
-
 ## Video Walkthrough of the project
 
 ## Features
 List out the key features of your application.
 
 - Able to fetch data from pendig orders
+['Homepage']('https://i.ibb.co/FgFQJFG/Homepage.png')
+
 - Able to filter data based on branch selection
+['Branches Data']('https://i.ibb.co/QMVyDCN/Branch-1.png')
 - Dynamic Data visualisation using graphs
+['Data Visualisation Using charts']('https://i.ibb.co/KrFRB0x/Branch-2.png')
+
 
 ## design decisions or assumptions
 List your design desissions & assumptions
@@ -28,14 +32,9 @@ cd my-project
 ng server
 ```
 
-## Usage
-Provide instructions and examples on how to use your project.
-
-```bash
-# Example
-```
-
-Include screenshots as necessary.
+## How to run the Project
+Open the vercel link the attached abouve and use the app
+I am using render service for the backend part so the added data will be removed after some because of render rules
 
 ## APIs Used
 https://freelancer-6ebn.onrender.com/
@@ -53,3 +52,9 @@ List and provide a brief overview of the technologies used in the project.
 - Chart.js
 - Json-server
 - Angular/Material Ui
+
+
+
+
+## Limitations
+As Render work slow in free service so some time data will display on the dom late,
