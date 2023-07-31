@@ -12,12 +12,14 @@ https://doqfy.vercel.app/
 List out the key features of your application.
 
 - Able to fetch data from pendig orders
-['Homepage']('https://i.ibb.co/FgFQJFG/Homepage.png')
 
+![Homepage](https://i.ibb.co/FgFQJFG/Homepage.png)
 - Able to filter data based on branch selection
-['Branches Data']('https://i.ibb.co/QMVyDCN/Branch-1.png')
+
+!['Branches Data'](https://i.ibb.co/QMVyDCN/Branch-1.png)
 - Dynamic Data visualisation using graphs
-['Data Visualisation Using charts']('https://i.ibb.co/KrFRB0x/Branch-2.png')
+
+!['Data Visualisation Using charts'](https://i.ibb.co/KrFRB0x/Branch-2.png)
 
 ## design decisions or assumptions
 List your design desissions & assumptions
