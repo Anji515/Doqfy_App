@@ -11,9 +11,12 @@ https://doqfy.vercel.app/
 ## Features
 List out the key features of your application.
 
+- Landing Page
+!['Homepage'](https://i.ibb.co/FgFQJFG/Homepage.png)
+
 - Able to fetch data from pendig orders
 
-!['Homepage'](https://i.ibb.co/FgFQJFG/Homepage.png)
+!['Pending Orders at left'](https://i.ibb.co/FgFQJFG/Homepage.png)
 
 - Able to filter data based on branch selection
 
