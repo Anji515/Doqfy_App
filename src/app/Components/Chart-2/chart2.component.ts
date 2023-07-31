@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
@@ -7,15 +7,48 @@ import Chart from 'chart.js/auto';
   styleUrls: ['./chart2.component.css']
 })
 export class Chart2Component implements OnInit {
-  chartData: number[] = [10, 30, 35, 25];
-  chartLabels: string[] = ['Initiated', 'Pending', 'Signed', 'Expired'];
-  chartColors: string[] = ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'];
   chart: Chart | any = null;
 
-  constructor() { }
+  @Input() filteredOrders: any[] = [];
+  @Input() orders: any[] = [];
+
+  initiatedCount = 0;
+  signedCount = 0;
+  pendingCount = 0;
+  expiredCount = 0;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['filteredOrders'] && changes['filteredOrders'].currentValue) {
+      this.processEsignData2();
+      this.updateChart(); 
+    }
+  }
 
   ngOnInit() {
     this.createChart();
+    this.processEsignData2(); 
+    this.updateChart(); 
+  }
+
+  processEsignData2() {
+    this.initiatedCount = this.filteredOrders.filter(order => order.eStamp === 'Initiated').length;
+    // console.log('initial',this.initiatedCount)
+    this.signedCount = this.filteredOrders.filter(order => order.eStamp === 'Signed').length;
+    this.pendingCount = this.filteredOrders.filter(order => order.eStamp === 'Pending').length;
+    this.expiredCount = this.filteredOrders.filter(order => order.eStamp === 'Expired').length;
+  }
+
+  updateChart() {
+    const total = this.initiatedCount + this.signedCount + this.pendingCount + this.expiredCount;
+    const percentages = [
+      (this.initiatedCount / total) * 100,
+      (this.pendingCount / total) * 100,
+      (this.signedCount / total) * 100,
+      (this.expiredCount / total) * 100
+    ];
+
+    this.chart.data.datasets[0].data = total === 0 ? [20, 40, 25, 15] : percentages;;
+    this.chart.update();
   }
 
   createChart() {
@@ -24,12 +57,12 @@ export class Chart2Component implements OnInit {
       this.chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: this.chartLabels,
+          labels: ['Initiated', 'Pending', 'Signed', 'Expired'],
           datasets: [
             {
-              data: this.chartData,
-              backgroundColor: this.chartColors,
-              hoverBackgroundColor: this.chartColors,
+              data: [], 
+              backgroundColor: ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'],
+              hoverBackgroundColor: ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'],
             }
           ]
         },

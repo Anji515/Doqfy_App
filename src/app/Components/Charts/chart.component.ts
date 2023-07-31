@@ -1,21 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import Chart from 'chart.js/auto';
 
 @Component({
-  selector: 'app-chart', 
+  selector: 'app-chart',
   templateUrl: './chart.component.html',
   styleUrls: ['./chart.component.css']
 })
 export class ChartComponent implements OnInit {
-  chartData: number[] = [40, 25, 20, 15];
-  chartLabels: string[] = ['Initiated', 'Pending', 'Signed', 'Expired'];
-  chartColors: string[] = ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'];
   chart: Chart | any = null;
 
-  constructor() { }
+  @Input() filteredOrders: any[] = [];
+  @Input() orders: any[] = [];
+
+  initiatedCount = 0;
+  signedCount = 0;
+  pendingCount = 0;
+  expiredCount = 0;
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['filteredOrders'] && changes['filteredOrders'].currentValue) {
+      this.processEsignData();
+      this.updateChart(); 
+    }
+  }
 
   ngOnInit() {
     this.createChart();
+    this.processEsignData(); 
+    this.updateChart();
+    
+  }
+
+  processEsignData() {
+    this.initiatedCount = this.filteredOrders.filter(order => order.eSign === 'Initiated').length;
+    // console.log('initial',this.initiatedCount)
+    this.signedCount = this.filteredOrders.filter(order => order.eSign === 'Signed').length;
+    this.pendingCount = this.filteredOrders.filter(order => order.eSign === 'Pending').length;
+    this.expiredCount = this.filteredOrders.filter(order => order.eSign === 'Expired').length;
+  }
+
+  updateChart() {
+    const total = this.initiatedCount + this.signedCount + this.pendingCount + this.expiredCount;
+    const percentages = [
+      (this.initiatedCount / total) * 100,
+      (this.pendingCount / total) * 100,
+      (this.signedCount / total) * 100,
+      (this.expiredCount / total) * 100
+    ];
+
+    this.chart.data.datasets[0].data = total === 0 ? [25, 35, 20, 20] : percentages;
+    this.chart.update();
   }
 
   createChart() {
@@ -24,12 +58,12 @@ export class ChartComponent implements OnInit {
       this.chart = new Chart(ctx, {
         type: 'doughnut',
         data: {
-          labels: this.chartLabels,
+          labels: ['Initiated', 'Pending', 'Signed', 'Expired'],
           datasets: [
             {
-              data: this.chartData,
-              backgroundColor: this.chartColors,
-              hoverBackgroundColor: this.chartColors,
+              data: [],
+              backgroundColor: ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'],
+              hoverBackgroundColor: ['#913ED5', '#916fad', '#c4acd8', '#e2dfe5'],
             }
           ]
         },

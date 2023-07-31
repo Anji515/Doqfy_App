@@ -15,6 +15,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { ChartComponent } from './Components/Charts/chart.component';
 import { Chart2Component } from './Components/Chart-2/chart2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import { Chart2Component } from './Components/Chart-2/chart2.component';
     LeftComponent,
     RightComponent,
     ChartComponent,
-    Chart2Component
+    Chart2Component,
+    // DataComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,8 @@ import { Chart2Component } from './Components/Chart-2/chart2.component';
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

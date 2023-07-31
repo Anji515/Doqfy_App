@@ -12,15 +12,24 @@
     </div>
   </div>
   <!-- Cities and Dates -->
-  
+
   <div>
     <div class="city-container">
-      <select name="branches" id="branches">
-        <option value="">All Branches</option>
+      <div>
+
+        <label for="branches"><strong>Select a state: </strong></label>
+        <select
+        name="branches"
+        id="branches"
+        [(ngModel)]="selectedState"
+        (change)="filterOrders()"
+        >
+        <option value="">All States</option>
         <option *ngFor="let state of statesOfIndia" [value]="state">
           {{ state }}
         </option>
       </select>
+    </div>
 
       <div>
         <label for="dateInput"><strong>Select a date : </strong></label>
@@ -31,7 +40,7 @@
           #dateInputRef
           (change)="onDateChange(dateInputRef.value)"
         />
-        <h3>{{ selectedDate | date: 'MMMM yyyy'}}</h3>
+        <h3>{{ selectedDate | date : "MMMM yyyy" }}</h3>
       </div>
     </div>
   </div>
@@ -44,21 +53,122 @@
       >
     </div>
     <div class="grid-container">
-      <div
-        class="orders"
-        *ngFor="let order of orders; let last = last"
-        [ngClass]="{ 'last-item-color': last }"
-      >
+      <div class="orders">
+        <div class="order-inner">
+          <h1>{{ totalDataCount }}</h1>
+          <i class="fa-solid fa-box-open"></i>
+        </div>
+        <h3>Total Orders</h3>
+        <div class="order-inner">
+          <i class="fa-solid fa-arrow-up-right-dots"></i>
+          <p>+2.4 %</p>
+        </div>
+      </div>
+      <div class="orders">
+        <div class="order-inner">
+          <h1>{{ progressCount }}</h1>
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <h3>Progress</h3>
+        <div class="order-inner">
+          <i class="fa-solid fa-arrow-up-right-dots"></i>
+          <p>+2.4 %</p>
+        </div>
+      </div>
+      <div class="orders">
+        <div class="order-inner">
+          <h1>{{ completedCount }}</h1>
+          <i class="fa-solid fa-box"></i>
+        </div>
+        <h3>Completed</h3>
+        <div class="order-inner">
+          <i class="fa-solid fa-arrow-up-right-dots"></i>
+          <p>+2.4 %</p>
+        </div>
+      </div>
+      <div class="orders">
+        <div class="order-inner">
+          <h1>{{ cancelledCount }}</h1>
+          <i class="fa-solid fa-stroopwafel"></i>
+        </div>
+        <h3>Cancelled</h3>
+        <div class="order-inner">
+          <i class="fa-solid fa-arrow-up-right-dots"></i>
+          <p>+2.4 %</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+
+    <app-chart
+    [filteredOrders]="filteredOrders"
+    [orders]="orders"
+    ></app-chart>
+    <app-chart2
+    [filteredOrders]="filteredOrders"
+    [orders]="orders"
+    ></app-chart2>
+  </div>
+</div>
+
+<!-- <div class="main-container">
+  <div class="outer-container">
+    <h1>Frequently Used</h1>
+    <div class="grid-container">
+      <div class="frequent" *ngFor="let item of frequent">
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.body }}</p>
+        <h2>
+          <a href="#">{{ item.link }} &gt; </a>
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="city-container">
+      <label for="branches"><strong>Select a state: </strong></label>
+      <select name="branches" id="branches" (change)="filterOrders()">
+        <option value="">All States</option>
+        <option *ngFor="let state of statesOfIndia" [value]="state">
+          {{ state }}
+        </option>
+      </select>
+
+      <div>
+        <label for="dateInput"><strong>Select a date: </strong></label>
+        <input
+          type="date"
+          id="dateInput"
+          name="dateInput"
+          #dateInputRef
+          (change)="onDateChange(dateInputRef.value)"
+        />
+        <h3>{{ selectedDate | date: 'MMMM yyyy' }}</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="outer-container">
+    <div class="order-heading">
+      <h1>Order Details</h1>
+      <span><a href="#"><strong>View All</strong></a></span>
+    </div>
+    <div class="grid-container">
+      <div class="orders" *ngFor="let order of filteredOrders; let last = last" [ngClass]="{ 'last-item-color': last }">
         <div>
-          <h2>{{ order.count }}</h2>
-          <h3>{{ order.status }}</h3>
+          <h2>{{ order.status }}</h2>
+          <h3>{{ order.eSign }}</h3>
           <div class="logoPer">
-            <div [innerHTML]="order.logoPer"></div>
+            <div [innerHTML]="order.eStamp"></div>
             <p>{{ order.percentage }}</p>
           </div>
         </div>
-        <div class="logo" [innerHTML]="order.logo"></div>
-      </div>
+        <div class="logo" [innerHTML]="order.state"></div> -->
+<!-- <div class="logo" [innerHTML]="order.logo"></div> -->
+<!-- </div>
     </div>
   </div>
 
@@ -66,4 +176,4 @@
     <app-chart></app-chart>
     <app-chart2></app-chart2>
   </div>
-</div>
+</div> -->

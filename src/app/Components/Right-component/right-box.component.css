@@ -25,7 +25,7 @@
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
+    padding: 20px;
     text-align: left;
     font-size: 18px;
     border: 1px solid rgb(141, 28, 215);
@@ -34,16 +34,28 @@
 
   .orders {
     display: flex;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    flex-direction: column;
+    /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
     justify-content: space-between;
     background-color: #F0EBF3;
     border-radius: 8px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    padding: 10px;
-    text-align: center;
+    padding: 15px;
+    text-align: left;
     font-size: 18px;
     border: 0px solid gray;
     border-radius: 16px;
+    align-content: center;
+  }
+
+  .orders .order-inner:first-child{
+    display: flex;
+    margin-bottom: -10px;
+    justify-content: space-between;
+  }
+ .order-inner{
+    display: flex;
+    justify-content: space-between;
   }
 
   .order-heading{
@@ -54,18 +66,20 @@
   .frequent h2,
   .orders h2 {
     font-size: 16px;
+    margin-bottom: -3px;
     color: #030303;
   }
   
   .frequent p,
   .orders p {
     color: #666666;
-    font-size: 13px;
+    font-size: 14px;
+    margin-bottom: -3px;
   }
   
   .orders .logo {
     font-size: 36px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #913ed5;
   }
   
@@ -91,8 +105,19 @@
     text-align: left;
   }
   
+  h1+i{
+    color: #913ed5;
+  }
+
+  i{
+    color: green;
+  }
   .orders p {
     margin: 5px 0;
+  }
+
+  #branches{
+    width: 75%;
   }
   
   .frequent:hover,
@@ -135,9 +160,9 @@
     border-radius: 5px;
     
   }
-  /* strong{
-    
-  } */
+  h3{
+    margin-bottom: -2px;
+  }
 
 
   /* Styles for chart-container */
@@ -175,7 +200,6 @@
     h1 {
       font-size: 14px; 
     }
-
     .frequent h2{
       font-size: 8px; 
       border: 0px solid red;
@@ -184,17 +208,20 @@
     .orders h2 {
       font-size: 12px; 
       border: 0px solid rgb(39, 37, 37);
+      margin-bottom: -3px;
     }  
 
     .orders h3{
       font-size: 7px; 
       border: 0px solid red;
+      margin-bottom: -2px;
     }
   
     .frequent p,
     .orders p {
       color: #666666;
       font-size: 8px;
+      margin-bottom: -3px;
     }
 
     .orders .logo {
