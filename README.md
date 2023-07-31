@@ -19,7 +19,6 @@ List out the key features of your application.
 - Dynamic Data visualisation using graphs
 ['Data Visualisation Using charts']('https://i.ibb.co/KrFRB0x/Branch-2.png')
 
-
 ## design decisions or assumptions
 List your design desissions & assumptions
 
