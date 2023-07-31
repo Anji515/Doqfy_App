@@ -2,26 +2,57 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
-## Development server
+# Project Title
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Introduction
+A brief introduction of your project goes here. You may want to cover the purpose of your project, its core functionality, and what problems it solves.
 
-## Code scaffolding
+## Deplolyed App
+https://deployed-site.whatever
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Video Walkthrough of the project
 
-## Build
+## Features
+List out the key features of your application.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Feature 1
+- Feature 2
+- Feature 3
 
-## Running unit tests
+## design decisions or assumptions
+List your design desissions & assumptions
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Installation & Getting started
+Detailed instructions on how to install, configure, and get the project running.
 
-## Running end-to-end tests
+```bash
+npm install my-project
+cd my-project
+npm start
+```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Usage
+Provide instructions and examples on how to use your project.
 
-## Further help
+```bash
+# Example
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Include screenshots as necessary.
+
+## APIs Used
+If your application relies on external APIs, document them and include any necessary links or references.
+
+## API Endpoints
+In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
+GET /api/items - retrieve all items
+POST /api/items - create a new item
+
+
+## Technology Stack
+List and provide a brief overview of the technologies used in the project.
+
+- Node.js
+- Express.js
+- MongoDB
+- Other libraries/modules
