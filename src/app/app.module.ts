@@ -17,6 +17,7 @@ import { ChartComponent } from './Components/Charts/chart.component';
 import { Chart2Component } from './Components/Chart-2/chart2.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { LoaderComponent } from './Components/Loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RightComponent,
     ChartComponent,
     Chart2Component,
-    // DataComponent
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

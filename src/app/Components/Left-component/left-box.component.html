@@ -12,15 +12,28 @@
 
 <div class="left-box-outer">
   <h2>Pending Actions</h2>
-  <div class="left-box-3">
-    <ng-container *ngFor="let item of data1" >
-      <div class="left-sub-box" *ngIf="item.filesAwaitingUpload > 0">
-        <div>
-          <h4><strong>{{item.id}}</strong></h4>
-          <button>{{item.daysAgo}} days ago</button>
-        </div>
-        <p >{{item.filesAwaitingUpload}} files are waiting to be Uploaded</p>
-      </div>
-    </ng-container>
+  <div *ngIf="isLoading; else dataSection">
+  <app-loader></app-loader>
   </div>
+  <ng-template #dataSection>
+    <!-- Show the data section when isLoading is false -->
+    <div class="left-box-3">
+      <ng-container *ngIf="data1.length > 0; else noDataSection">
+        <ng-container *ngFor="let item of data1">
+          <div class="left-sub-box" *ngIf="item.filesAwaitingUpload > 0">
+            <div>
+              <h4><strong>{{ item.id }}</strong></h4>
+              <button>{{ item.daysAgo }} days ago</button>
+            </div>
+            <p>{{ item.filesAwaitingUpload }} files are waiting to be Uploaded</p>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+  </ng-template>
 </div>
+
+<ng-template #noDataSection>
+  <p>No pending actions available.</p>
+  <app-loader></app-loader>
+</ng-template>

@@ -17,21 +17,22 @@ export class LeftComponent implements OnInit{
   constructor( private http: HttpClient, private snackBar: MatSnackBar) { }
   
   data1: Pending[]=[] ;
-  filteredData: Pending[] = []
+  filteredData: Pending[] = [];
+  isLoading: boolean = true;
 
   fetchOrdersData() {
+    this.isLoading = true;
     this.http.get<Pending[]>('https://freelancer-6ebn.onrender.com/pendingActions').subscribe(
       (data) => {
         this.data1 = data.map((item) => ({
           ...item,
           daysAgo: this.getDaysAgo(item.dueDate),
         }));
-
-        // this.filteredData = this.data1.filter((item) => item.daysAgo > 0);
-        // console.log('Pending', this.data1);
+        this.isLoading = false;
       },
       (error) => {
         console.error('Error fetching data:', error);
+        this.isLoading = false;
       }
     );
   }
