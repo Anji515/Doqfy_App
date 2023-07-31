@@ -35,7 +35,7 @@ Detailed instructions on how to install, configure, and get the project running.
 ```bash
 npm install my-project
 cd my-project
-ng server
+ng serve
 ```
 
 ## How to run the Project
@@ -46,10 +46,9 @@ I am using render service for the backend part so the added data will be removed
 https://freelancer-6ebn.onrender.com/
 
 ## API Endpoints
+- GET /api/orders - retrieve all orders
+- GET /api/pendingActions - retrieve all pendingActions
 In case of Backend Applications provide a list of your API endpoints, methods, brief descriptions, and examples of request/response.
-#### GET /api/orders - retrieve all orders
-#### GET /api/pendingActions - retrieve all pendingActions
-
 
 ## Technology Stack
 List and provide a brief overview of the technologies used in the project.
