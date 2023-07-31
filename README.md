@@ -6,8 +6,6 @@ A brief introduction of your project goes here. You may want to cover the purpos
 ## Deplolyed App
 https://doqfy.vercel.app/
 
-## Video Walkthrough of the project
-
 ## Features
 List out the key features of your application.
 
